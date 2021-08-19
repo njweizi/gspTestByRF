@@ -31,6 +31,7 @@ case01
     # Select From List By Value    xpath=//*[@id="ext-comp-1015"]    500
     Sleep    3s
     Wait Until Page Contains Element    xpath=//*[@id="ext-gen174"]/div[1]/table/tbody/tr/td[1]
+    Close Browser
 
 case02
     import the third library
