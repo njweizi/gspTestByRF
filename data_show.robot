@@ -32,6 +32,9 @@ case01
     Sleep    3s
     Wait Until Page Contains Element    xpath=//*[@id="ext-gen174"]/div[1]/table/tbody/tr/td[1]
 
+case02
+    import the third library
+
 *** Keywords ***
 open browser gsp
     ${options}    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys,selenium.webdriver
@@ -59,3 +62,16 @@ login gsp
     Click Button    xpath=//*[@id="login"]
 
 open page and return
+
+import the third library
+    #${path}=    Evaluate    sys.path
+    #${realpath}=    Evaluate    os.path.realpath(os.path.dirname(os.path.abspath('__file__'))) + '\\ImageCodePicher'
+    #log    ${realpath}
+    #log    ${path}
+    #${set}=    Evaluate    sys.path.append(r'${realpath}')
+    #log    ${set}
+    #${path}=    Evaluate    sys.path
+    #log    ${path}
+    ${code}=    ImageCodePicher.get_txt    D:\\TEST\\10.png    ${252}
+    log    ${code}
+    [Teardown]
